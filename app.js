@@ -1,20 +1,33 @@
 'use strict'
 
+/* Require Dependencies*/
 let restify = require('restify')
+let mongoose = require('mongoose')
+let config 	= require('./config')
+let routes = require('./routes')
 
+
+/* Create Server And Define Settings */
 let server = restify.createServer({
-  name: 'xxjz-restful',
-  version: '1.0.0'
+  name: config.NAME,
+  version: config.VERSION
 })
 
-server.use(restify.acceptParser(server.acceptable));
-server.use(restify.queryParser());
-server.use(restify.bodyParser());
+/* Common Handlers */
+server.use(restify.acceptParser(server.acceptable))
+server.use(restify.queryParser())
+server.use(restify.bodyParser())
+server.use(restify.jsonp())
 
-server.get('/keep/:name', function (req, res, next) {
-  res.send(req.params);
-  return next();
-});
+// server.get('/keep/:name', function (req, res, next) {
+//   res.send(req.params);
+//   return next();
+// });
 
+/* Start Routing API Calls */
+routes.route(server)
+// server.get('/article', )
+// server.get('/article/:id')
 
-server.listen(3000,() => console.log('%s listening at %s', server.name, server.url))
+/* Start Server & Bind to Port */
+server.listen(config.PORT,() => console.log('%s listening at %s', server.name, server.url))

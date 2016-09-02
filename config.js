@@ -1,7 +1,14 @@
 'use strict'
 
-let conf = {}
+let conf = {
+	NAME:'xxjz-rest-api',
+	VERSION: '1.0.0',
+	DBPATH: 'mongodb://asd'
+}
 
-conf.db_ath ='';
+
+
+
+
 
 module.exports = conf
