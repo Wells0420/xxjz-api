@@ -1,0 +1,29 @@
+{
+  "name": "xxjz-rest-api",
+  "version": "1.0.0",
+  "description": "NextGen-Parent Restful API",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Wells0420/xxjz-api.git"
+  },
+  "keywords": [
+    "xxjz",
+    "restful",
+    "restify"
+  ],
+  "author": "WellsWong",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Wells0420/xxjz-api/issues"
+  },
+  "homepage": "https://github.com/Wells0420/xxjz-api#readme",
+  "dependencies": {
+    "bunyan": "^1.8.1",
+    "mongoose": "^4.5.10",
+    "restify": "^4.1.1"
+  }
+}
